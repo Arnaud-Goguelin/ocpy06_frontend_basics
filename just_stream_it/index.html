@@ -1,10 +1,96 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JustStreamIt</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-$END$
+
+    <header>
+        <nav>
+            <a href="/">JustStreamIt</a>
+        </nav>
+        <h1>Vidéos à la demande</h1>
+    </header>
+
+    <main>
+
+        <section id="best-movie">
+            <h2>Meilleur film</h2>
+            <article id="best-movie-content">
+                <img src="" alt="Affiche du meilleur film">
+                <div>
+                    <h3 id="best-movie-title"></h3>
+                    <p id="best-movie-summary"></p>
+                    <button class="btn-details" data-movie-id="">Détails</button>
+                </div>
+            </article>
+        </section>
+
+        <section id="top-rated" class="category-section">
+            <h2>Films les mieux notés</h2>
+            <div class="movies-grid"></div>
+            <button class="btn-see-more">Voir au-dessus</button>
+        </section>
+
+        <section id="category-1" class="category-section">
+            <h2>Mystery</h2>
+            <div class="movies-grid"></div>
+            <button class="btn-see-more">Voir au-dessus</button>
+        </section>
+
+        <section id="category-2" class="category-section">
+            <h2>Catégorie 2</h2>
+            <div class="movies-grid"></div>
+            <button class="btn-see-more">Voir au-dessus</button>
+        </section>
+
+        <section id="other-category" class="category-section">
+            <h2>Autres</h2>
+            <div id="category-selector">
+                <label for="category-select">Catégorie :</label>
+                <select id="category-select">
+                    <option value="all">Toutes</option>
+                </select>
+            </div>
+            <div class="movies-grid"></div>
+            <button class="btn-see-more">Voir au-dessus</button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>JustStreamIt</p>
+    </footer>
+
+    <!-- ===== modale ===== -->
+    <template id="movie-modal-template">
+        <div id="movie-modal" class="modal">
+            <div class="modal-content">
+                <button class="modal-close" aria-label="Fermer">&times;</button>
+                <img id="modal-image" src="" alt="">
+                <h3 id="modal-title"></h3>
+                <p id="modal-genre"></p>
+                <p id="modal-date"></p>
+                <p id="modal-rated"></p>
+                <p id="modal-imdb-score"></p>
+                <p id="modal-director"></p>
+                <p id="modal-actors"></p>
+                <p id="modal-duration"></p>
+                <p id="modal-country"></p>
+                <p id="modal-box-office"></p>
+                <p id="modal-description"></p>
+            </div>
+        </div>
+    </template>
+
+    <!-- ===== scripts ===== -->
+    <script src="js/api.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/app.js"></script>
+
 </body>
 </html>

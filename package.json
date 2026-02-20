@@ -1,0 +1,30 @@
+{
+    "name": "juststreamit",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "lint:html": "htmlhint index.html",
+        "lint:css": "stylelint css/**/*.css",
+        "lint:js": "eslint js/**/*.js",
+        "lint": "pnpm lint:html && pnpm lint:css && pnpm lint:js"
+    },
+    "stylelint": {
+        "extends": "stylelint-config-standard"
+    },
+    "htmlhint": {
+        "tagname-lowercase": true,
+        "attr-lowercase": true,
+        "attr-value-double-quotes": true,
+        "tag-pair": true,
+        "id-unique": true,
+        "alt-require": true
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "eslint": "^10.0.0",
+        "globals": "^17.3.0",
+        "htmlhint": "^1.9.1",
+        "stylelint": "^17.3.0",
+        "stylelint-config-standard": "^40.0.0"
+    }
+}

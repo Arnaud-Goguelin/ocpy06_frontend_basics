@@ -1,0 +1,31 @@
+:root {
+    --white: #ffffff;
+    --grey: #D7DDE6;
+    --grey-light: #F5F7F9;
+    --dark: #171717;
+    --orange-sostenible:#FFC422;
+    --color-highlight: #007A90;
+    --color-success: #003331;
+    --color-success-light: #EFFAF4;
+    --color-accent: #29A06C;
+    --color-accent-light: #B2E8C9;
+    --color-warning: #7C2112;
+    --color-warning-light: #FFF5ED;
+    --color-caption: #8295AF;
+    --color-border: #BBC6D5;
+    --color-neutral: #556478;
+    --color-neutral-light: #ECEFF3;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--dark);
+}
+
+.text-color-highlight {
+    color: var(--color-highlight);
+}
+
+.text-color-caption {
+    color: var(--color-caption);
+}

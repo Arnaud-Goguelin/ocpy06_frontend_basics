@@ -1,0 +1,13 @@
+@import url("./base/color.css");
+@import url("./base/reset.css");
+@import url("./base/typography.css");
+
+/* from layout folder */
+@import url("./layout/header.css");
+@import url("./layout/footer.css");
+@import url("./layout/section.css");
+
+/* from component folder */
+@import url("./component/button.css");
+@import url("./component/modal.css");
+@import url("./component/movie-grid.css");

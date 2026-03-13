@@ -1,11 +1,16 @@
-@import url("./base/color.css");
 @import url("./base/reset.css");
+@import url("./base/color.css");
+@import url("./base/scaling.css");
+@import url("./base/spacing.css");
+@import url("./base/font-face.css");
 @import url("./base/typography.css");
+
 
 /* from layout folder */
 @import url("./layout/header.css");
 @import url("./layout/footer.css");
 @import url("./layout/section.css");
+@import url("./layout/article.css");
 
 /* from component folder */
 @import url("./component/button.css");

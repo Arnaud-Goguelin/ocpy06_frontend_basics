@@ -61,7 +61,7 @@
 
     <header>
         <nav>
-            <a href="/">JustStreamIt</a>
+            <a href="/"><img src="assets/images/logo.webp"></a>
         </nav>
         <h1>Vidéos à la demande</h1>
     </header>
@@ -75,30 +75,30 @@
                 <div>
                     <h3 id="best-movie-title"></h3>
                     <p id="best-movie-summary"></p>
-                    <button class="btn-details" data-movie-id="">Détails</button>
+                    <button  data-movie-id="">Détails</button>
                 </div>
             </article>
         </section>
 
-        <section id="top-rated" class="category-section">
+        <section id="top-rated" >
             <h2>Films les mieux notés</h2>
-            <div class="movies-grid"></div>
-            <button class="btn-see-more">Voir au-dessus</button>
+            <div ></div>
+            <button >Voir plus</button>
         </section>
 
-        <section id="category-1" class="category-section">
+        <section id="category-1" >
             <h2>Mystery</h2>
-            <div class="movies-grid"></div>
-            <button class="btn-see-more">Voir au-dessus</button>
+            <div ></div>
+            <button >Voir plus</button>
         </section>
 
-        <section id="category-2" class="category-section">
+        <section id="category-2" >
             <h2>Catégorie 2</h2>
-            <div class="movies-grid"></div>
-            <button class="btn-see-more">Voir au-dessus</button>
+            <div ></div>
+            <button >Voir plus</button>
         </section>
 
-        <section id="other-category" class="category-section">
+        <section id="other-category" >
             <h2>Autres</h2>
             <div id="category-selector">
                 <label for="category-select">Catégorie :</label>
@@ -106,8 +106,8 @@
                     <option value="all">Toutes</option>
                 </select>
             </div>
-            <div class="movies-grid"></div>
-            <button class="btn-see-more">Voir au-dessus</button>
+            <div ></div>
+            <button >Voir plus</button>
         </section>
 
     </main>
@@ -118,9 +118,9 @@
 
     <!-- ===== modale ===== -->
     <template id="movie-modal-template">
-        <div id="movie-modal" class="modal">
-            <div class="modal-content">
-                <button class="modal-close" aria-label="Fermer">&times;</button>
+        <div id="movie-modal">
+            <div>
+                <button aria-label="Fermer">&times;</button>
                 <img id="modal-image" src="" alt="">
 <!--                TODO: use definition list here ?-->
                 <h3 id="modal-title"></h3>

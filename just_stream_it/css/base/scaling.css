@@ -2,7 +2,8 @@
     --desktop-breakpoint: 1024px;
     --tablet-breakpoint: 768px;
     --mobile-breakpoint: 576px;
-    /*--container-width: fix width: 837px + 2*padding*/
+
+    /* --container-width: fix width: 837px + 2*padding */
     --container-width: 869px;
 }
 
@@ -13,8 +14,4 @@
     margin-right: auto;
     padding-left: var(--spacing-md );
     padding-right: var(--spacing-md);
-}
-
-@container (max-width: var(--mobile-breakpoint)) {
-
 }

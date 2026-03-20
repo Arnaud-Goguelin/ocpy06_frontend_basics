@@ -4,7 +4,7 @@ p {
 }
 
 /* --tablet-breakpoint: 768 (see scaling.css) */
-@media screen and (max-width: 768px) {
+@media screen and (width <= 768px) {
 p {
     font-size: var(--font-size-s-tablet);
 }
@@ -12,7 +12,7 @@ p {
 }
 
 /* --tablet-breakpoint: 576 (see scaling.css) */
-@media screen and (max-width: 576px) {
+@media screen and (width <= 576px) {
 p {
     font-size: var(--font-size-s-mobile);
 }

@@ -13,7 +13,7 @@ button:hover {
 }
 
 /* --tablet-breakpoint: 768 (see scaling.css) */
-@media screen and (max-width: 768px) {
+@media screen and (width <= 768px) {
     button {
         font-size: var(--font-size-2xs-tablet);
         width: 123px;
@@ -23,7 +23,7 @@ button:hover {
 }
 
 /* --mobile-breakpoint: 576px (see scaling.css) */
-@media screen and (max-width: 576px) {
+@media screen and (width <= 576px) {
     button {
             font-size: var(--font-size-2xs-mobile);
             width: 91px;

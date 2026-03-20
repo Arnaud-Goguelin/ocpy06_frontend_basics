@@ -12,11 +12,7 @@
 @import url("./layout/paragraph.css");
 @import url("./layout/header.css");
 @import url("./layout/footer.css");
-@import url("./layout/section.css");
-@import url("./layout/article.css");
 
 /* from component folder */
 @import url("./component/card.css");
 @import url("./component/button.css");
-@import url("./component/modal.css");
-@import url("./component/movie-grid.css");

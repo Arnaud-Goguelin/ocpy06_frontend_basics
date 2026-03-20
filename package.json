@@ -4,8 +4,8 @@
     "type": "module",
     "scripts": {
         "lint:html": "htmlhint index.html",
-        "lint:css": "stylelint css/**/*.css",
-        "lint:js": "eslint js/**/*.js",
+        "lint:css": "stylelint --fix just_stream_it/css/**/*.css",
+        "lint:js": "eslint just_stream_it/js/**/*.js",
         "lint": "pnpm lint:html && pnpm lint:css && pnpm lint:js"
     },
     "stylelint": {

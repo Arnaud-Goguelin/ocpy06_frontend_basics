@@ -1,0 +1,42 @@
+h1 {
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-light);
+}
+
+h2 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+}
+
+h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+}
+
+/* --tablet-breakpoint: 768 (see scaling.css) */
+@media screen and (max-width: 768px) {
+    h2 {
+    font-size: var(--font-size-l-tablet);
+}
+
+    h3 {
+    font-size: var(--font-size-l-tablet);
+}
+
+}
+
+/* --mobile-breakpoint: 576px (see scaling.css) */
+@media screen and (max-width: 576px) {
+    h1 {
+    display: none;
+}
+
+    h2 {
+    font-size: var(--font-size-medium-mobile);
+}
+
+    h3 {
+    font-size: var(--font-size-xl-mobile);
+}
+
+}

@@ -1,0 +1,20 @@
+p {
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-light);
+}
+
+/* --tablet-breakpoint: 768 (see scaling.css) */
+@media screen and (max-width: 768px) {
+p {
+    font-size: var(--font-size-s-tablet);
+}
+
+}
+
+/* --tablet-breakpoint: 576 (see scaling.css) */
+@media screen and (max-width: 576px) {
+p {
+    font-size: var(--font-size-s-mobile);
+}
+
+}

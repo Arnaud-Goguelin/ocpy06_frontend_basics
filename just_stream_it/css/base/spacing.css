@@ -14,8 +14,16 @@
 
 .mt-3xl { margin-top: var(--spacing-3xl); }
 .mb-3xl { margin-bottom: var(--spacing-3xl); }
+.ml-3xl { margin-left: var(--spacing-3xl); }
 
 .mb-xl { margin-bottom: var(--spacing-xl); }
+.ml-xl { margin-left: var(--spacing-xl); }
+
+
 
 /* ************************ PADDINGS ************************ */
-
+.p-3xl { padding: var(--spacing-3xl); }
+.pt-3xl { padding-top: var(--spacing-3xl); }
+.pb-3xl { padding-bottom: var(--spacing-3xl); }
+.pl-3xl { padding-left: var(--spacing-3xl); }
+.pr-3xl { padding-right: var(--spacing-3xl); }

@@ -1,0 +1,10 @@
+img {
+     /* prepare fall back to display somathing if fetch image failed in API */
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-extra-light);
+    font-style: italic;
+    text-align: center;
+    word-spacing: var(--spacing-xs);
+}

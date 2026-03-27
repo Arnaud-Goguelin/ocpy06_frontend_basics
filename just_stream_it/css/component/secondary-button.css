@@ -1,0 +1,13 @@
+.secondary-button {
+    background-color: var(--tertiary-bg);
+    border-radius: 25px;
+    padding: var(--spacing-xs);
+    color: var(--text-white);
+    font-size: var(--font-size-3xs);
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.secondary-button:hover {
+    background-color: var(--header-footer-bg);
+}
+

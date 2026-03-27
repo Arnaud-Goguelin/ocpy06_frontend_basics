@@ -8,11 +8,15 @@
 
 /* from layout folder */
 @import url("./layout/body.css");
+@import url("./layout/section.css");
 @import url("./layout/titles.css");
 @import url("./layout/paragraph.css");
 @import url("./layout/header.css");
 @import url("./layout/footer.css");
+@import url("./layout/img.css");
 
 /* from component folder */
 @import url("./component/card.css");
-@import url("./component/button.css");
+@import url("./component/primary-button.css");
+@import url("./component/secondary-button.css");
+@import url("./component/grid.css");

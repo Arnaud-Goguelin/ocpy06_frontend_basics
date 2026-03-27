@@ -16,27 +16,21 @@
     height: 334px;
     min-width: 227px;
     margin: auto 0;
-
-    /* prepare fall back to display somathing if fetch image failed in API */
-    background-color: var(--header-footer-bg);
-    color: var(--text-white);
-    font-size: var(--font-size-medium);
-    font-weight: var(--font-weight-extra-light);
-    font-style: italic;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    word-spacing: var(--spacing-xs);
 }
 
 .card button {
+        display: block;
+        width: 166px;
+        height: 68px;
         float: right;
 }
 
 /* --tablet-breakpoint: 768 (see scaling.css) */
 @media screen and (width <= 768px) {
     .card button {
+        font-size: var(--font-size-2xs-tablet);
+        width: 123px;
+        height: 49px;
         margin: var(--spacing-md) auto 0 auto;
     }
 
@@ -67,5 +61,11 @@
         width: 100%;
         height: 241px;
         object-fit: cover;
+    }
+
+    .card button {
+            font-size: var(--font-size-2xs-mobile);
+            width: 91px;
+            height: 40px;
     }
 }

@@ -1,32 +1,21 @@
-button {
+.primary-button {
     background-color: var(--accent-red);
-    width: 166px;
-    height: 68px;
     border-radius: 25px;
     color: var(--text-white);
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-semi-bold);
+    padding: var(--spacing-xs);
 }
 
-button:hover {
+.primary-button:hover {
     background-color: var(--accent-red-hover);
 }
 
 /* --tablet-breakpoint: 768 (see scaling.css) */
 @media screen and (width <= 768px) {
-    button {
+    .primary-button {
         font-size: var(--font-size-2xs-tablet);
-        width: 123px;
-        height: 49px;
+        font-weight: var(--font-weight-semi-bold);
     }
 
-}
-
-/* --mobile-breakpoint: 576px (see scaling.css) */
-@media screen and (width <= 576px) {
-    button {
-            font-size: var(--font-size-2xs-mobile);
-            width: 91px;
-            height: 40px;
-    }
 }

@@ -1,4 +1,9 @@
 
+header img {
+    background-color: var(--header-footer-bg);
+    color: var(--text-white);
+}
+
 nav {
     background-color: var(--header-footer-bg);
     color: var(--text-white);

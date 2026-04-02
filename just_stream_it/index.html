@@ -246,27 +246,83 @@
         <p>JustStreamIt</p>
     </footer>
 
-    <!-- ===== modale ===== -->
+    <!-- ===== modal ===== -->
     <template id="movie-modal-template">
-        <div id="movie-modal">
-            <div>
-                <button aria-label="Fermer">&times;</button>
-                <img id="modal-image" src="" alt="">
-<!--                TODO: use definition list here ?-->
-                <h3 id="modal-title"></h3>
-                <p id="modal-genre"></p>
-                <p id="modal-date"></p>
-                <p id="modal-rated"></p>
-                <p id="modal-imdb-score"></p>
-                <p id="modal-director"></p>
-                <p id="modal-actors"></p>
-                <p id="modal-duration"></p>
-                <p id="modal-country"></p>
-                <p id="modal-box-office"></p>
-                <p id="modal-description"></p>
+        <div class="background-modal">
+            <div class="modal">
+                <button aria-label="close">x</button>
+                <div id="movie-presentation">
+                     <img src="assets/images/the_big_lebowski.webp" alt="affiche du film - - -">
+                    <h3>The Big Lebowski</h3>
+                    <dl>
+                        <dt>Année</dt>
+                            <dd>1998 - Comedy, Crime, Sport</dd>
+                        <dt>Classification</dt>
+                            <dd>PG-13 - 117 minutes (USA / UK)</dd>
+                        <dt>IMDB score</dt>
+                            <dd>IMDB score: 8.1/10</dd>
+                        <dt>Recettes au box-office</dt>
+                            <dd>Recettes au box-office: $48.2m</dd>
+                        <dt>Réalisé par</dt>
+                            <dd>Joel Coen, Ethan Coen</dd>
+                    </dl>
+                </div>
+                <dl>
+                    <dt>Synopsis</dt>
+                        <dd>When "the dude" Lebowski is mistaken for a millionaire Lebowski, two thugs urinate on his rug to
+                            coerce him into paying a debt he knows nothing about. While attempting to gain recompense for the ruined rug from his wealthy counterpart,
+                            he accepts a one-time job with high pay-off.
+                            He enlists the help of his bowling buddy, Walter, a gun-toting Jewish-convert with anger issues.
+                            Deception leads to more trouble, and it soon seems that everyone from porn empire tycoons to
+                            nihilists want something from The Dude.</dd>
+                    <dt>Acteurs</dt>
+                        <dd>Avec: David Huddleston, Flea, Jack Kehler, Jeff Bridges, Jimmie Dale Gilmore, John Goodman, John
+                            Turturro, Julianne Moore, Mark Pellegrino, Peter Stormare, Philip Moon, Philip Seymour Hoffman,
+                            Steve Buscemi, Tara Reid, Torsten Voges</dd>
+                </dl>
+                <button aria-label="close">Fermer</button>
             </div>
         </div>
     </template>
+
+    <div class="background-modal">
+            <div class="modal">
+                <button class="close-button-tablet-mobile" aria-label="close">❌</button>
+                <div class="movie-presentation">
+                    <div>
+                        <h3>The Big Lebowski</h3>
+                        <dl>
+                            <dt>Année</dt>
+                                <dd>1998 - Comedy, Crime, Sport</dd>
+                            <dt>Classification</dt>
+                                <dd>PG-13 - 117 minutes (USA / UK)</dd>
+                            <dt>IMDB score</dt>
+                                <dd>IMDB score: 8.1/10</dd>
+                            <dt>Recettes au box-office</dt>
+                                <dd>Recettes au box-office: $48.2m</dd>
+                            <dt>Réalisé par</dt>
+                                <dd>Joel Coen, Ethan Coen</dd>
+                        </dl>
+                    </div>
+                    <img src="assets/images/the_big_lebowski.webp" alt="affiche du film - - -">
+                </div>
+                <dl class="movie-description">
+                    <dt>Synopsis</dt>
+                        <dd>When "the dude" Lebowski is mistaken for a millionaire Lebowski, two thugs urinate on his rug to
+                            coerce him into paying a debt he knows nothing about. While attempting to gain recompense for the ruined rug from his wealthy counterpart,
+                            he accepts a one-time job with high pay-off.
+                            He enlists the help of his bowling buddy, Walter, a gun-toting Jewish-convert with anger issues.
+                            Deception leads to more trouble, and it soon seems that everyone from porn empire tycoons to
+                            nihilists want something from The Dude.</dd>
+                    <dt>Acteurs</dt>
+                        <dd><span>Avec:</span>
+                            <br>David Huddleston, Flea, Jack Kehler, Jeff Bridges, Jimmie Dale
+                            Gilmore, John Goodman, John Turturro, Julianne Moore, Mark Pellegrino, Peter Stormare, Philip Moon, Philip Seymour Hoffman,
+                            Steve Buscemi, Tara Reid, Torsten Voges</dd>
+                </dl>
+                <button class="primary-button close-button-desktop" aria-label="close">Fermer</button>
+            </div>
+        </div>
 
     <!-- ===== scripts ===== -->
     <script src="js/api.js"></script>

@@ -1,0 +1,92 @@
+.background-modal {
+    background-color: var(--modal-overlay);
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background-color: var(--primary-bg);
+    padding: var(--spacing-lg) var(--spacing-3xl);
+    border: 6px solid var(--border-color);
+    width: 778px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal dt {
+    display: none;
+    margin-left: 0;
+}
+
+.modal dd {
+    margin-left: 0;
+}
+
+.movie-presentation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    width: 100%;
+}
+
+.movie-presentation dl {
+    margin-top: 0;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+}
+
+.movie-presentation dt:last-of-type {
+    margin-top: var(--spacing-xl);
+    display: block;
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.movie-presentation dd:last-of-type {
+    font-weight: var(--font-weight-light);
+}
+
+.movie-presentation img {
+    width: 227px;
+    height: 334px;
+}
+
+.movie-description {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-extra-light);
+}
+
+.movie-description dd:last-of-type {
+    margin-top: var(--spacing-xl);
+}
+
+.movie-description dd:last-of-type span {
+    font-weight: var(--font-weight-light);
+}
+
+.close-button-tablet-mobile {
+    color: var(--accent-red);
+    font-size: var(--font-size-medium-tablet);
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.close-button-desktop {
+    width: 214px;
+    margin-top: var(--spacing-xl);
+}
+
+/* --tablet-breakpoint: 768 (see scaling.css) */
+@media screen and (width >= 768px) {
+    .close-button-tablet-mobile {
+        display: none;
+    }
+
+}

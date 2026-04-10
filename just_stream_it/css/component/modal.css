@@ -21,15 +21,6 @@
     align-items: center;
 }
 
-.modal dt {
-    display: none;
-    margin-left: 0;
-}
-
-.modal dd {
-    margin-left: 0;
-}
-
 .movie-presentation {
     display: flex;
     flex-direction: row;
@@ -44,13 +35,34 @@
     font-weight: var(--font-weight-bold);
 }
 
-.movie-presentation dt:last-of-type {
+.movie-presentation dt {
+    margin-left: 0;
+}
+
+.movie-presentation dd {
+    margin-left: 0;
+}
+
+.dt-hidden {
+    display: none;
+}
+
+.dl-inline {
+    display: flex;
+    flex-direction: row;
+}
+
+.dl-inline dd {
+    margin-left: var(--spacing-xs);
+}
+
+.director dt {
     margin-top: var(--spacing-xl);
     display: block;
     font-weight: var(--font-weight-semi-bold);
 }
 
-.movie-presentation dd:last-of-type {
+.director dd:last-of-type {
     font-weight: var(--font-weight-light);
 }
 

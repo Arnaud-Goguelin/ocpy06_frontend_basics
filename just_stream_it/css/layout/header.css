@@ -1,0 +1,22 @@
+
+header img {
+    background-color: var(--header-footer-bg);
+    color: var(--text-white);
+}
+
+nav {
+    background-color: var(--header-footer-bg);
+    color: var(--text-white);
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: var(--spacing-md) var(--spacing-xl);
+}
+
+/* --mobile-breakpoint: 576px (see scaling.css) */
+@media screen and (width <= 576px) {
+    nav {
+        justify-content: center;
+    }
+}

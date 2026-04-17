@@ -54,89 +54,250 @@
         "itemListElement": []
     }
     </script>
-
+    <!-- ===== CSS imports ===== -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <header>
+    <header class="container mt-3xl mb-3xl">
         <nav>
-            <a href="/">JustStreamIt</a>
+            <a href="/#"><img src="assets/images/logo.webp"></a>
+            <h1 class="ml-3xl">Vidéos à la demande</h1>
         </nav>
-        <h1>Vidéos à la demande</h1>
     </header>
 
-    <main>
+    <main class="container mb-3xl">
 
-        <section id="best-movie">
-            <h2>Meilleur film</h2>
-            <article id="best-movie-content">
-                <img src="" alt="Affiche du meilleur film">
+        <section id="best-movie" class="mb-xl">
+            <h2 class="mb-xl">Meilleur film</h2>
+            <article id="best-movie-content" class="card">
+                <img src="assets/images/the_big_lebowski.webp" alt="affiche du meilleur film">
                 <div>
-                    <h3 id="best-movie-title"></h3>
-                    <p id="best-movie-summary"></p>
-                    <button class="btn-details" data-movie-id="">Détails</button>
+                    <h3>The Big Lebowski</h3>
+                    <p>Jeff "The Dude" Lebowski, mistaken for a millionaire of the same name, seeks restitution for
+                        his ruined rug and enlists his bowling buddies to help get it.</p>
+                    <button class="primary-button">Détails</button>
                 </div>
             </article>
         </section>
 
-        <section id="top-rated" class="category-section">
+        <section id="top-rated" >
             <h2>Films les mieux notés</h2>
-            <div class="movies-grid"></div>
-            <button class="btn-see-more">Voir au-dessus</button>
+            <div class="grid">
+                <article>
+                    <img src="assets/images/the_big_lebowski.webp" alt="affiche d'un des films les mieux notés">
+                    <div>
+                        <h4>Titre 1</h4>
+                        <button class="secondary-button">Détails</button>
+                    </div>
+                </article>
+                <article>
+                    <img src="" alt="affiche d'un des films les mieux notés">
+                    <div>
+                        <h4>Titre 2</h4>
+                        <button class="secondary-button">Détails</button>
+                    </div>
+                </article>
+                <article>
+                    <img src="" alt="affiche d'un des films les mieux notés">
+                    <div>
+                        <h4>Titre 3</h4>
+                        <button class="secondary-button">Détails</button>
+                    </div>
+                </article>
+                <article>
+                    <img src="" alt="affiche d'un des films les mieux notés">
+                    <div>
+                        <h4>Titre 4</h4>
+                        <button class="secondary-button">Détails</button>
+                    </div>
+                </article>
+                <article>
+                    <img src="" alt="affiche d'un des films les mieux notés">
+                    <div>
+                        <h4>Titre 5</h4>
+                        <button class="secondary-button">Détails</button>
+                    </div>
+                </article>
+                <article>
+                    <img src="" alt="affiche d'un des films les mieux notés">
+                    <div>
+                        <h4>Titre 6</h4>
+                        <button class="secondary-button">Détails</button>
+                    </div>
+                </article>
+            </div>
+            <button class="primary-button">Voir plus</button>
         </section>
 
-        <section id="category-1" class="category-section">
-            <h2>Mystery</h2>
-            <div class="movies-grid"></div>
-            <button class="btn-see-more">Voir au-dessus</button>
-        </section>
-
-        <section id="category-2" class="category-section">
+        <section id="category-2" >
             <h2>Catégorie 2</h2>
-            <div class="movies-grid"></div>
-            <button class="btn-see-more">Voir au-dessus</button>
+            <div class="grid">
+                <article>
+                    <img src="" alt="affiche d'un des films de la catégorie 2">
+                    <div>
+                        <h4>Titre 1</h4>
+                        <button class="secondary-button">Détails</button>
+                    </div>
+                </article>
+                <article>
+                    <img src="" alt="affiche d'un des films de la catégorie 2">
+                    <div>
+                        <h4>Titre 2</h4>
+                        <button class="secondary-button">Détails</button>
+                    </div>
+                </article>
+                <article>
+                    <img src="" alt="affiche d'un des films de la catégorie 2">
+                    <div>
+                        <h4>Titre 3</h4>
+                        <button class="secondary-button">Détails</button>
+                    </div>
+                </article>
+                <article>
+                    <img src="" alt="affiche d'un des films de la catégorie 2">
+                    <div>
+                        <h4>Titre 4</h4>
+                        <button class="secondary-button">Détails</button>
+                    </div>
+                </article>
+                <article>
+                    <img src="" alt="affiche d'un des films de la catégorie 2">
+                    <div>
+                        <h4>Titre 5</h4>
+                        <button class="secondary-button">Détails</button>
+                    </div>
+                </article>
+                <article>
+                    <img src="" alt="affiche d'un des films de la catégorie 2">
+                    <div>
+                        <h4>Titre 6</h4>
+                        <button class="secondary-button">Détails</button>
+                    </div>
+                </article>
+            </div>
+            <button class="primary-button">Voir plus</button>
         </section>
 
-        <section id="other-category" class="category-section">
-            <h2>Autres</h2>
-            <div id="category-selector">
-                <label for="category-select">Catégorie :</label>
+        <section id="other-category" >
+            <div class="category-selector">
+                <h2>Autres :</h2>
+                <label for="category-select">Sélectionner une catégorie</label>
                 <select id="category-select">
-                    <option value="all">Toutes</option>
+                    <option value="action">Film d'action</option>
+                    <option value="comedy">Comédies</option>
+                    <option value="family">Famille</option>
+                    <option value="fantasy">Fantasy</option>
+                    <option value="horror">Horreur</option>
+                    <option value="sci-fi">Science-fiction</option>
+                    <option value="western">Westerns</option>
                 </select>
             </div>
-            <div class="movies-grid"></div>
-            <button class="btn-see-more">Voir au-dessus</button>
+            <div class="grid">
+                <article>
+                    <img src="" alt="affiche d'un des films les mieux notés">
+                    <div>
+                        <h4>Titre 1</h4>
+                        <button class="secondary-button">Détails</button>
+                    </div>
+                </article>
+                <article>
+                    <img src="" alt="affiche d'un des films les mieux notés">
+                    <div>
+                        <h4>Titre 2</h4>
+                        <button class="secondary-button">Détails</button>
+                    </div>
+                </article>
+                <article>
+                    <img src="" alt="affiche d'un des films les mieux notés">
+                    <div>
+                        <h4>Titre 3</h4>
+                        <button class="secondary-button">Détails</button>
+                    </div>
+                </article>
+                <article>
+                    <img src="" alt="affiche d'un des films les mieux notés">
+                    <div>
+                        <h4>Titre 4</h4>
+                        <button class="secondary-button">Détails</button>
+                    </div>
+                </article>
+                <article>
+                    <img src="" alt="affiche d'un des films les mieux notés">
+                    <div>
+                        <h4>Titre 5</h4>
+                        <button class="secondary-button">Détails</button>
+                    </div>
+                </article>
+                <article>
+                    <img src="" alt="affiche d'un des films les mieux notés">
+                    <div>
+                        <h4>Titre 6</h4>
+                        <button class="secondary-button">Détails</button>
+                    </div>
+                </article>
+            </div>
+            <button class="primary-button">Voir plus</button>
         </section>
 
     </main>
 
-    <footer>
+    <footer class="container">
         <p>JustStreamIt</p>
     </footer>
 
-    <!-- ===== modale ===== -->
+    <!-- ===== modal ===== -->
     <template id="movie-modal-template">
-        <div id="movie-modal" class="modal">
-            <div class="modal-content">
-                <button class="modal-close" aria-label="Fermer">&times;</button>
-                <img id="modal-image" src="" alt="">
-<!--                TODO: use definition list here ?-->
-                <h3 id="modal-title"></h3>
-                <p id="modal-genre"></p>
-                <p id="modal-date"></p>
-                <p id="modal-rated"></p>
-                <p id="modal-imdb-score"></p>
-                <p id="modal-director"></p>
-                <p id="modal-actors"></p>
-                <p id="modal-duration"></p>
-                <p id="modal-country"></p>
-                <p id="modal-box-office"></p>
-                <p id="modal-description"></p>
+        <div class="background-modal">
+            <div class="modal">
+                <button class="close-button-tablet-mobile" aria-label="close">❌</button>
+                <div class="movie-presentation">
+                    <div>
+                        <h3>The Big Lebowski</h3>
+                        <dl>
+                            <dt class="dt-hidden">Année - classification</dt>
+                                <dd>1998 - Comedy, Crime, Sport</dd>
+                            <dt class="dt-hidden">filtre PG - Durée</dt>
+                                <dd>PG-13 - 117 minutes (USA / UK)</dd>
+                            <div class="dl-inline">
+                                <dt>IMDB score:</dt>
+                                    <dd> 8.1/10</dd>
+                            </div>
+                            <div class="dl-inline">
+                                <dt>Recettes au box-office:</dt>
+                                    <dd>$48.2m</dd>
+                            </div>
+                            <div class="director">
+                                <dt>Réalisé par: </dt>
+                                    <dd>Joel Coen, Ethan Coen</dd>
+                            </div>
+                        </dl>
+                    </div>
+                    <img class="modal-desktop-img" src="assets/images/the_big_lebowski.webp"
+                         alt="affiche du film - - -">
+                </div>
+                <dl class="movie-description">
+                    <dt class="dt-hidden">Synopsis</dt>
+                        <dd>When "the dude" Lebowski is mistaken for a millionaire Lebowski, two thugs urinate on his rug to
+                            coerce him into paying a debt he knows nothing about. While attempting to gain recompense for the ruined rug from his wealthy counterpart,
+                            he accepts a one-time job with high pay-off.
+                            He enlists the help of his bowling buddy, Walter, a gun-toting Jewish-convert with anger issues.
+                            Deception leads to more trouble, and it soon seems that everyone from porn empire tycoons to
+                            nihilists want something from The Dude.</dd>
+                    <img class="modal-tablet-img" src="assets/images/the_big_lebowski.webp"
+                         alt="affiche du film - - -">
+                    <dt class="dt-hidden">Acteurs</dt>
+                        <dd class="actors"><div>Avec:</div>
+                            David Huddleston, Flea, Jack Kehler, Jeff Bridges, Jimmie Dale
+                            Gilmore, John Goodman, John Turturro, Julianne Moore, Mark Pellegrino, Peter Stormare, Philip Moon, Philip Seymour Hoffman,
+                            Steve Buscemi, Tara Reid, Torsten Voges</dd>
+                </dl>
+                <button class="primary-button close-button-desktop" aria-label="close">Fermer</button>
             </div>
         </div>
     </template>
+
+
 
     <!-- ===== scripts ===== -->
     <script src="js/api.js"></script>

@@ -1,0 +1,17 @@
+:root {
+    --desktop-breakpoint: 1024px;
+    --tablet-breakpoint: 768px;
+    --mobile-breakpoint: 576px;
+
+    /* --container-width: fix width: 837px + 2*padding */
+    --container-width: 869px;
+}
+
+.container {
+    width: var(--container-width);
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--spacing-md );
+    padding-right: var(--spacing-md);
+}

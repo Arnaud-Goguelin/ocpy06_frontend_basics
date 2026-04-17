@@ -1,0 +1,152 @@
+.background-modal {
+    background-color: var(--modal-overlay);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background-color: var(--primary-bg);
+    padding: var(--spacing-lg) var(--spacing-3xl);
+    border: 6px solid var(--border-color);
+    max-width: 778px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.modal dt {
+    margin-left: 0;
+}
+
+.modal dd {
+    margin-left: 0;
+}
+
+.dt-hidden {
+    display: none;
+}
+
+.dl-inline {
+    display: flex;
+    flex-direction: row;
+}
+
+.dl-inline dd {
+    margin-left: var(--spacing-xs);
+}
+
+.modal img {
+    width: 227px;
+    height: 334px;
+    align-self: flex-end;
+}
+
+.modal img.modal-tablet-img {
+    width: 100%;
+    height: auto;
+    margin: var(--spacing-lg) 0;
+}
+
+.movie-presentation {
+    width: 100%;
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+}
+
+.director dt {
+    margin-top: var(--spacing-xl);
+    display: block;
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.director dd:last-of-type {
+    font-weight: var(--font-weight-light);
+}
+
+.movie-description {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-light);
+    width: 100%;
+}
+
+.actors {
+    margin-top: var(--spacing-xl);
+    font-size: var(--font-size-2xs);
+}
+
+.actors div {
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.close-button-tablet-mobile {
+    color: var(--accent-red);
+    font-size: var(--font-size-medium-tablet);
+    font-weight: var(--font-weight-semi-bold);
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    position: absolute;
+}
+
+.close-button-desktop {
+    order: 4;
+    width: 214px;
+    margin-top: var(--spacing-xl);
+}
+
+/* --tablet-breakpoint: 768 (see scaling.css) */
+@media screen and (width >= 768px) {
+    .close-button-tablet-mobile {
+        display: none;
+    }
+
+    .modal-tablet-img {
+        display: none;
+    }
+
+}
+
+/* --tablet-breakpoint: 768 (see scaling.css) */
+@media screen and (width < 768px) {
+    .background-modal {
+        position: static;
+        display: block;
+    }
+
+    .modal {
+        display: flex;
+        height: 100%;
+        padding: var(--spacing-lg);
+    }
+
+    .modal-desktop-img {
+        display: none;
+    }
+
+    .close-button-desktop {
+        display: none;
+    }
+
+    .movie-presentation .movie-description {
+        font-size: var(--font-size-2xs-tablet);
+    }
+}
+
+/* --mobile-breakpoint: 576px (see scaling.css) */
+@media screen and (width <= 576px) {
+    .movie-presentation .movie-description {
+        font-size: var(--font-size-2xs-mobile);
+    }
+}

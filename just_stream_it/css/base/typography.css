@@ -1,0 +1,34 @@
+:root {
+    --font-weight-bold: 600;
+    --font-weight-semi-bold: 500;
+    --font-weight-light: 300;
+    --font-weight-extra-light: 200;
+    --font-weight-regular: normal;
+
+    /* desktop */
+    --font-size-xl: 48px;
+    --font-size-l: 40px;
+    --font-size-medium: 36px;
+    --font-size-s: 28px;
+    --font-size-xs: 24px;
+    --font-size-2xs: 20px;
+    --font-size-3xs: 14px;
+
+    /* tablet */
+    --font-size-xl-tablet: 40px;
+    --font-size-l-tablet: 40px;
+    --font-size-medium-tablet: 32px;
+    --font-size-s-tablet: 24px;
+    --font-size-xs-tablet: 24px;
+    --font-size-2xs-tablet: 20px;
+    --font-size-3xs-tablet: 14px;
+
+    /* mobile */
+    --font-size-xl-mobile: 32px;
+    --font-size-l-mobile: 40px;
+    --font-size-medium-mobile: 32px;
+    --font-size-s-mobile: 16px;
+    --font-size-xs-mobile: 24px;
+    --font-size-2xs-mobile: 14px;
+    --font-size-3xs-mobile: 14px;
+}

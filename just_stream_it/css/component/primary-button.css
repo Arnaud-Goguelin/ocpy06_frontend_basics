@@ -1,0 +1,21 @@
+.primary-button {
+    background-color: var(--accent-red);
+    border-radius: 25px;
+    color: var(--text-white);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semi-bold);
+    padding: var(--spacing-xs);
+}
+
+.primary-button:hover {
+    background-color: var(--accent-red-hover);
+}
+
+/* --tablet-breakpoint: 768 (see scaling.css) */
+@media screen and (width <= 768px) {
+    .primary-button {
+        font-size: var(--font-size-2xs-tablet);
+        font-weight: var(--font-weight-semi-bold);
+    }
+
+}

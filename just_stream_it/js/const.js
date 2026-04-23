@@ -37,4 +37,41 @@ const GENRES_ENDPOINT_ALLOWED_PARAMS = [
     "movie_title_contains",
 ];
 
-export {BASE_URL, TITLES_ENDPOINT_ALLOWED_PARAMS, GENRES_ENDPOINT_ALLOWED_PARAMS};
+// /api/v1/genres/
+let allowedGenres = [
+    "Action",
+    "Adult",
+    "Adventure",
+    "Animation",
+    "Biography",
+    "Comedy",
+    "Crime",
+    "Documentary",
+    "Drama",
+    "Family",
+    "Fantasy",
+    "Film-Noir",
+    "History",
+    "Horror",
+    "Music",
+    "Musical",
+    "Mystery",
+    "News",
+    "Reality-TV",
+    "Romance",
+    "Sci-Fi",
+    "Sport",
+    "Thriller",
+    "War",
+    "Western",
+];
+
+const indexOne = Math.floor(Math.random() * allowedGenres.length);
+const randomGenreOne = allowedGenres[indexOne];
+allowedGenres.splice(indexOne, 1);
+
+const indexTwo = Math.floor(Math.random() * allowedGenres.length);
+const randomGenreTwo = allowedGenres[indexTwo];
+allowedGenres.splice(indexTwo, 1);
+
+export {BASE_URL, TITLES_ENDPOINT_ALLOWED_PARAMS, GENRES_ENDPOINT_ALLOWED_PARAMS, randomGenreOne, randomGenreTwo};

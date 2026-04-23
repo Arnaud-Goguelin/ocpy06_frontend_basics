@@ -41,10 +41,26 @@ document.addEventListener("DOMContentLoaded", async () => {
     );
     if (moviesByRandomGenreTwoError) throw moviesByRandomGenreTwoError;
 
+    // ── 6 films of first remaining genre ──────────────────────────────
+    const { data: moviesRemainingGenre, error: moviesRemainingGenreError } = await fetchTitles(
+        buildTitlesParams({ page: 1, page_size: 6, genre: allGenres[0] })
+    );
+    if (moviesRemainingGenreError) throw moviesRemainingGenreError;
+
     // ── Render ───────────────────────────────────────────────────────────────
     renderBestMovie(bestMovieData);
     renderMovieGrid("#top-rated .grid", topRatedMovies);
     renderRandomMovieGrid("random-category-one", randomGenreOne, moviesByRandomGenreOne.results);
     renderRandomMovieGrid("random-category-two", randomGenreTwo, moviesByRandomGenreTwo.results);
+    renderMovieGrid("#other-category .grid", moviesRemainingGenre.results);
     renderCategorySelect(allGenres);
+     // ── Event listeners ──────────────────────────────────────────────────────
+        document.querySelector("#category-select").addEventListener("change", async (e) => {
+            const selectedGenre = e.target.value;
+            const { data, error } = await fetchTitles(
+                buildTitlesParams({ page: 1, page_size: 6, genre: selectedGenre })
+            );
+            if (error) throw error;
+            renderMovieGrid("#other-category .grid", data.results);
+        });
 });

@@ -1,10 +1,20 @@
-import { fetchTitles, fetchTitleById, buildTitlesParams } from "./fetch.js";
+import { fetchAllGenreNames, fetchTitles, fetchTitleById, buildTitlesParams } from "./fetch.js";
 import { renderBestMovie, renderMovieGrid, renderRandomMovieGrid } from "./render.js";
-import {randomGenreOne, randomGenreTwo} from "./const.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 
     // ── Fetch films' data from API ──────────────────────────────
+    // ── all genres ─────────────────────────────────────────────────────
+    const { data: allGenres, error: genresError } = await fetchAllGenreNames();
+    if (genresError) throw genresError;
+
+    const indexOne = Math.floor(Math.random() * allGenres.length);
+    const randomGenreOne = allGenres[indexOne];
+    allGenres.splice(indexOne, 1);
+
+    const indexTwo = Math.floor(Math.random() * allGenres.length);
+    const randomGenreTwo = allGenres[indexTwo];
+    allGenres.splice(indexTwo, 1);
     // ── top 7 films sorted by IMDB score ──────────────────────────────
     const { data: titlesData, error: titlesError } = await fetchTitles(
         buildTitlesParams({ page: 1, page_size: 7, sort_by: "-imdb_score" })

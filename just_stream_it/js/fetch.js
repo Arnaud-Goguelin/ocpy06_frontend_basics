@@ -53,18 +53,6 @@ async function fetchTitleById(id) {
 }
 
 /**
- * This function reuses fetchData with to get films by genre from the API
- * on a specific endpoint with query parameters added correctly
- * @param {Object} params - Query parameters to be added to the URL
- * @returns {{ data: Object|null, error: Error|null }} An object containing data in JSON format and error object
- */
-async function fetchGenres(params = {}) {
-    const queryString = new URLSearchParams(params).toString();
-    const url = `${BASE_URL}genres/${queryString ? "?" + queryString : ""}`;
-    return fetchData(url);
-}
-
-/**
  * This function filters the provided parameters to only include those allowed by the API
  * and removes any null values
  * @param {string[]} allowed - Array of allowed parameter keys
@@ -80,8 +68,23 @@ function buildParams(allowed, params = {}) {
 
 /** Arrow function to build query parameters for the titles endpoint */
 const buildTitlesParams = (params) => buildParams(TITLES_ENDPOINT_ALLOWED_PARAMS, params);
-/** Arrow function to build query parameters for the genres endpoint */
-const buildGenresParams = (params) => buildParams(GENRES_ENDPOINT_ALLOWED_PARAMS, params);
 
+/**
+ * Fetches all genres from the API, handling pagination
+ * @returns {{ data: string[]|null, error: Error|null }} An array of genre names
+ */
+async function fetchAllGenreNames() {
+    let genres = [];
+    let url = `${BASE_URL}genres/`;
 
-export { fetchTitles, fetchTitleById, fetchGenres, buildTitlesParams, buildGenresParams };
+    while (url) {
+        const { data, error } = await fetchData(url);
+        if (error) return { data: null, error };
+        genres = genres.concat(data.results.map(g => g.name));
+        url = data.next;
+    }
+
+    return { data: genres, error: null };
+}
+
+export { fetchTitles, fetchTitleById, fetchAllGenreNames, buildTitlesParams };

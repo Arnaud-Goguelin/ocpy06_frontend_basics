@@ -75,4 +75,54 @@ function renderCategorySelect(genres) {
     });
 }
 
-export { renderBestMovie, renderMovieGrid, createMovieCard, renderRandomMovieGrid, renderCategorySelect };
+/**
+ * Creates and returns the full modal element populated with movie data
+ * @param {Object} movie - Full movie details object from the API
+ * @returns {HTMLElement} The overlay element containing the modal
+ */
+function createModal(movie) {
+    const overlay = document.createElement("div");
+    overlay.classList.add("background-modal");
+
+    overlay.innerHTML = `
+        <div class="modal">
+            <button class="close-button-tablet-mobile" aria-label="close">❌</button>
+            <div class="movie-presentation">
+                <div>
+                    <h3>${movie.title}</h3>
+                    <dl>
+                        <dt class="dt-hidden">Année - classification</dt>
+                            <dd>${movie.year} - ${movie.genres?.join(", ") ?? ""}</dd>
+                        <dt class="dt-hidden">Filtre PG - Durée</dt>
+                            <dd>${movie.rated ?? "N/A"} - ${movie.duration} minutes (${movie.countries?.join(" / ") ?? ""})</dd>
+                        <div class="dl-inline">
+                            <dt>IMDB score :</dt>
+                                <dd>${movie.imdb_score}/10</dd>
+                        </div>
+                        <div class="dl-inline">
+                            <dt>Recettes au box-office :</dt>
+                                <dd>${movie.worldwide_gross_income ? `$${Number(movie.worldwide_gross_income).toLocaleString("en-US")}` : "N/A"}</dd>
+                        </div>
+                        <div class="director">
+                            <dt>Réalisé par :</dt>
+                                <dd>${movie.directors?.join(", ") ?? "N/A"}</dd>
+                        </div>
+                    </dl>
+                </div>
+                <img class="modal-desktop-img" src="${movie.image_url}" alt="affiche du film ${movie.title}">
+            </div>
+            <dl class="movie-description">
+                <dt class="dt-hidden">Synopsis</dt>
+                    <dd>${movie.description}</dd>
+                <img class="modal-tablet-img" src="${movie.image_url}" alt="affiche du film ${movie.title}">
+                <dt class="dt-hidden">Acteurs</dt>
+                    <dd class="actors"><div>Avec :</div> ${movie.actors?.join(", ") ?? "N/A"}</dd>
+            </dl>
+            <button class="primary-button close-button-desktop" aria-label="close">Fermer</button>
+        </div>
+    `;
+
+    return overlay;
+}
+
+export { renderBestMovie, renderMovieGrid, createMovieCard, renderRandomMovieGrid, renderCategorySelect, createModal };

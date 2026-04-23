@@ -1,5 +1,6 @@
 import { fetchAllGenreNames, fetchTitles, fetchTitleById, buildTitlesParams } from "./fetch.js";
 import { renderBestMovie, renderMovieGrid, renderRandomMovieGrid,renderCategorySelect } from "./render.js";
+import { openModal } from "./modal.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -55,12 +56,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderMovieGrid("#other-category .grid", moviesRemainingGenre.results);
     renderCategorySelect(allGenres);
      // ── Event listeners ──────────────────────────────────────────────────────
-        document.querySelector("#category-select").addEventListener("change", async (e) => {
-            const selectedGenre = e.target.value;
+        document.querySelector("#category-select").addEventListener("change", async (event) => {
+            const selectedGenre = event.target.value;
             const { data, error } = await fetchTitles(
                 buildTitlesParams({ page: 1, page_size: 6, genre: selectedGenre })
             );
             if (error) throw error;
             renderMovieGrid("#other-category .grid", data.results);
+        });
+
+        document.addEventListener("click", (event) => {
+            const btn = event.target.closest("[data-movie-id]");
+            if (btn) openModal(btn.dataset.movieId);
         });
 });

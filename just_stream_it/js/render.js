@@ -59,4 +59,20 @@ function renderRandomMovieGrid(sectionId, genre, movies) {
     renderMovieGrid(`#${sectionId} .grid`, movies);
 }
 
-export { renderBestMovie, renderMovieGrid, createMovieCard, renderRandomMovieGrid };
+/**
+ * Populates the #category-select with the remaining genres
+ * @param {string[]} genres - Array of genre names
+ */
+function renderCategorySelect(genres) {
+    const select = document.querySelector("#category-select");
+
+    select.innerHTML = "";
+    genres.forEach(genre => {
+        const option = document.createElement("option");
+        option.value = genre;
+        option.textContent = genre;
+        select.appendChild(option);
+    });
+}
+
+export { renderBestMovie, renderMovieGrid, createMovieCard, renderRandomMovieGrid, renderCategorySelect };

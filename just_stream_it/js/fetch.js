@@ -47,6 +47,7 @@ async function fetchTitles(params = {}) {
  * @returns {{ data: Object|null, error: Error|null }} An object containing data in JSON format and error object
  */
 async function fetchTitleById(id) {
+    if (!id) return { data: null, error: new Error("id is required") };
     const url = `${BASE_URL}titles/${id}`;
     return fetchData(url);
 }

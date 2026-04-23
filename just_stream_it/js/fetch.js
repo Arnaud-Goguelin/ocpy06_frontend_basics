@@ -1,3 +1,4 @@
+import {BASE_URL, TITLES_ENDPOINT_ALLOWED_PARAMS, GENRES_ENDPOINT_ALLOWED_PARAMS} from "./const.js";
 
 async function fetchData(url) {
     /*
@@ -28,4 +29,32 @@ async function fetchData(url) {
     return { data, error };
 }
 
-export default fetchData;
+async function fetchTitles(params = {}) {
+    const queryString = new URLSearchParams(params).toString();
+    const url = `${BASE_URL}titles/${queryString ? "?" + queryString : ""}`;
+    return fetchData(url);
+}
+
+async function fetchTitleById(id) {
+    const url = `${BASE_URL}titles/${id}`;
+    return fetchData(url);
+}
+
+async function fetchGenres(params = {}) {
+    const queryString = new URLSearchParams(params).toString();
+    const url = `${BASE_URL}genres/${queryString ? "?" + queryString : ""}`;
+    return fetchData(url);
+}
+
+function buildParams(allowed, params = {}) {
+    return Object.fromEntries(
+        Object.entries({ page: 1, ...params })
+            .filter(([key, value]) => allowed.includes(key) && value !== null)
+    );
+}
+
+const buildTitlesParams = (params) => buildParams(TITLES_ENDPOINT_ALLOWED_PARAMS, params);
+const buildGenresParams = (params) => buildParams(GENRES_ENDPOINT_ALLOWED_PARAMS, params);
+
+
+export { fetchTitles, fetchTitleById, fetchGenres, buildTitlesParams, buildGenresParams };

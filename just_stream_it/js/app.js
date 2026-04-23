@@ -1,16 +1,9 @@
-import fetchData from "./fetch.js";
-import API_URL from "./const.js";
-
-let pageNumber = 1;
-const filmUrl = API_URL + `titles/?page=${pageNumber}`;
+import {fetchTitles, buildTitlesParams} from "./fetch.js";
 
 //  ToDo: add loader if get time
 // showLoader();
-const {data, error} = await fetchData(filmUrl);
+const { data: titlesData, error: titlesError } = await fetchTitles(buildTitlesParams({page: 1, page_size: 7}));
 // hideLoader();
 
-if (error) {
-    throw error;
-}
-
-console.log(data);
+if (titlesError) throw titlesError;
+console.log(titlesData);

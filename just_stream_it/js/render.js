@@ -37,12 +37,26 @@ function createMovieCard(movie) {
 /**
  * Renders the top-rated movies grid (films 2–7)
  * @param {Object[]} movies - Array of movie objects
+ * @param {string} querySelector - The CSS selector for the grid container
  */
-function renderTopRated(movies) {
-    const grid = document.querySelector("#top-rated .grid");
+function renderMovieGrid(querySelector, movies ) {
+    const grid = document.querySelector(querySelector);
 
     grid.innerHTML = "";
     movies.forEach(movie => grid.appendChild(createMovieCard(movie)));
 }
 
-export { renderBestMovie, renderTopRated, createMovieCard };
+/**
+ * Renders a grid of movies into a given section, and updates the section's h2 title
+ * @param {string} genre - The genre name to display in the h2
+ * @param {Object[]} movies - Array of movie objects
+ */
+function renderRandomMovieGrid(sectionId, genre, movies) {
+    const section = document.querySelector(`#${sectionId}`);
+    const title = section.querySelector("h2");
+
+    title.textContent = `Catégorie ${genre}`;
+    renderMovieGrid(`#${sectionId} .grid`, movies);
+}
+
+export { renderBestMovie, renderMovieGrid, createMovieCard, renderRandomMovieGrid };

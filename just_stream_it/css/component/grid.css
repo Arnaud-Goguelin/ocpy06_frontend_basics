@@ -26,17 +26,22 @@
     width: 100%;
     top: var(--spacing-xl);
     background-color: rgb(0 0 0 / 50%);
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
     display: flex;
     flex-direction: column;
+    justify-content: start;
+    align-items: start;
 }
 
 .grid article div button {
+    position: absolute;
     width: 81px;
-    margin-left: 65%;
+    bottom: var(--spacing-xs);
+    right: var(--spacing-xs);
 }
 
 .grid h4 {
+    width: 100%;
     color: var(--text-white);
 }
 

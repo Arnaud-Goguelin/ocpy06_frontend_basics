@@ -7,7 +7,7 @@ function renderBestMovie(movie) {
 
     const img = document.createElement("img");
     img.setAttribute("src", movie.image_url);
-    img.setAttribute("alt", `\naffiche de ${movie.title}`);
+    img.setAttribute("alt", `affiche de ${movie.title}`);
 
     const div = document.createElement("div");
 
@@ -33,10 +33,11 @@ function renderBestMovie(movie) {
  */
 function createMovieCard(movie) {
     const article = document.createElement("article");
+    article.setAttribute("role", "listitem");
 
      const img = document.createElement("img");
         img.setAttribute("src", movie.image_url);
-        img.setAttribute("alt", `\naffiche de ${movie.title}`);
+        img.setAttribute("alt", `affiche de ${movie.title}`);
 
     const div = document.createElement("div");
 
@@ -181,7 +182,7 @@ function createMovieDescriptionBlock(movie) {
     const imgTablet = document.createElement("img");
     imgTablet.classList.add("modal-tablet-img");
     imgTablet.setAttribute("src", movie.image_url);
-    imgTablet.setAttribute("alt", `\naffiche du film ${movie.title}`);
+    imgTablet.setAttribute("alt", `affiche du film ${movie.title}`);
 
     const dtActors = document.createElement("dt");
     dtActors.classList.add("dt-hidden");
@@ -228,7 +229,7 @@ function createModal(movie) {
     const imgDesktop = document.createElement("img");
     imgDesktop.classList.add("modal-desktop-img");
     imgDesktop.setAttribute("src", movie.image_url);
-    imgDesktop.setAttribute("alt", `\naffiche du film ${movie.title}`);
+    imgDesktop.setAttribute("alt", `affiche du film ${movie.title}`);
 
     presentationDiv.append(createMovieInfoBlock(movie), imgDesktop);
 

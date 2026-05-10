@@ -69,8 +69,8 @@
     aspect-ratio: 227/334;
 }
 
-.movie-info {
-    /*max-width: 50%;*/
+.movie-info h3 {
+    max-width: 85%;
 }
 
 .director dt {
@@ -106,6 +106,7 @@
     top: var(--spacing-lg);
     right: var(--spacing-lg);
     position: absolute;
+    cursor: pointer;
 }
 
 .close-button-desktop {

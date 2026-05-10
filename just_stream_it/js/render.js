@@ -4,6 +4,7 @@
  */
 function renderBestMovie(movie) {
     const container = document.querySelector("#best-movie-content");
+    container.setAttribute("data-movie-id", movie.id);
 
     const img = document.createElement("img");
     img.setAttribute("src", movie.image_url);
@@ -19,7 +20,6 @@ function renderBestMovie(movie) {
 
     const button = document.createElement("button");
     button.classList.add("primary-button");
-    button.setAttribute("data-movie-id", movie.id);
     button.textContent = "Détails";
 
     div.append(h3, p, button);
@@ -34,10 +34,11 @@ function renderBestMovie(movie) {
 function createMovieCard(movie) {
     const article = document.createElement("article");
     article.setAttribute("role", "listitem");
+    article.setAttribute("data-movie-id", movie.id);
 
-     const img = document.createElement("img");
-        img.setAttribute("src", movie.image_url);
-        img.setAttribute("alt", `affiche de ${movie.title}`);
+    const img = document.createElement("img");
+    img.setAttribute("src", movie.image_url);
+    img.setAttribute("alt", `affiche de ${movie.title}`);
 
     const div = document.createElement("div");
 
@@ -46,7 +47,6 @@ function createMovieCard(movie) {
 
     const button = document.createElement("button");
     button.classList.add("secondary-button");
-    button.setAttribute("data-movie-id", movie.id);
     button.textContent = "Détails";
 
     div.append(h4, button);

@@ -3,6 +3,7 @@
     justify-content: space-evenly;
     border: 6px solid var(--border-color);
     padding: var(--spacing-lg) var(--spacing-md);
+    cursor: pointer;
 }
 
 .card h3,
@@ -23,6 +24,10 @@
         width: 166px;
         height: 68px;
         float: right;
+}
+
+.card:hover .primary-button {
+    background-color: var(--accent-red-hover);
 }
 
 /* --tablet-breakpoint: 768 (see scaling.css) */

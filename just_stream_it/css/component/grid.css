@@ -11,6 +11,7 @@
     overflow: hidden;
     width: 100%;
     height: 252px;
+    cursor: pointer;
 }
 
 .grid img {
@@ -38,6 +39,10 @@
     width: 81px;
     bottom: var(--spacing-xs);
     right: var(--spacing-xs);
+}
+
+.grid article:hover .secondary-button {
+    background-color: var(--header-footer-bg);
 }
 
 .grid h4 {

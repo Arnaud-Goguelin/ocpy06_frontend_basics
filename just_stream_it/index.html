@@ -61,7 +61,7 @@
 
     <header class="container mt-3xl mb-3xl">
         <nav>
-            <a href="/#"><img src="assets/images/logo.webp"></a>
+            <a href="/#"><img src="assets/images/logo.webp" alt="logo de Just Stream It"></a>
             <h1 class="ml-3xl">Vidéos à la demande</h1>
         </nav>
     </header>
@@ -70,33 +70,33 @@
 
         <section id="best-movie" class="mb-xl">
             <h2 class="mb-xl">Meilleur film</h2>
-            <article id="best-movie-content" class="card">
+            <article id="best-movie-content" class="card" aria-label="Meilleur film">
 <!--                populated by JS-->
             </article>
         </section>
 
         <section id="top-rated" >
             <h2>Films les mieux notés</h2>
-            <div class="grid">
+            <div class="grid" role="list" aria-label="Films les mieux notés">
 <!--                populated by JS-->
             </div>
-            <button class="primary-button">Voir plus</button>
+            <button class="primary-button" aria-label="Voir plus de films les mieux notés">Voir plus</button>
         </section>
 
         <section id="random-category-one">
             <h2>Catégorie</h2>
-            <div class="grid">
+            <div class="grid" role="list">
 <!--                populated by JS-->
             </div>
-            <button class="primary-button">Voir plus</button>
+            <button class="primary-button" aria-label="Voir plus de films de cette catégorie">Voir plus</button>
         </section>
 
         <section id="random-category-two">
             <h2>Catégorie</h2>
-            <div class="grid">
+            <div class="grid" role="list">
 <!--                populated by JS-->
             </div>
-            <button class="primary-button">Voir plus</button>
+            <button class="primary-button" aria-label="Voir plus de films de cette catégorie">Voir plus</button>
         </section>
 
         <section id="other-category">
@@ -107,10 +107,10 @@
 <!--                populated by JS-->
                 </select>
             </div>
-            <div class="grid">
+            <div class="grid" role="list">
 <!--                populated by JS-->
             </div>
-            <button class="primary-button">Voir plus</button>
+            <button class="primary-button" aria-label="Voir plus de films de cette catégorie">Voir plus</button>
         </section>
 
     </main>

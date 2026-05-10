@@ -3,3 +3,8 @@ body {
     color: var(--text-color);
     font-family: Oswald, sans-serif;
 }
+
+:focus-visible {
+    outline: 3px solid var(--accent-red);
+    outline-offset: 2px;
+}

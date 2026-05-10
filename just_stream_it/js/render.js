@@ -4,10 +4,11 @@
  */
 function renderBestMovie(movie) {
     const container = document.querySelector("#best-movie-content");
+    container.setAttribute("data-movie-id", movie.id);
 
     const img = document.createElement("img");
     img.setAttribute("src", movie.image_url);
-    img.setAttribute("alt", `\naffiche de ${movie.title}`);
+    img.setAttribute("alt", `affiche de ${movie.title}`);
 
     const div = document.createElement("div");
 
@@ -19,7 +20,6 @@ function renderBestMovie(movie) {
 
     const button = document.createElement("button");
     button.classList.add("primary-button");
-    button.setAttribute("data-movie-id", movie.id);
     button.textContent = "Détails";
 
     div.append(h3, p, button);
@@ -33,10 +33,12 @@ function renderBestMovie(movie) {
  */
 function createMovieCard(movie) {
     const article = document.createElement("article");
+    article.setAttribute("role", "listitem");
+    article.setAttribute("data-movie-id", movie.id);
 
-     const img = document.createElement("img");
-        img.setAttribute("src", movie.image_url);
-        img.setAttribute("alt", `\naffiche de ${movie.title}`);
+    const img = document.createElement("img");
+    img.setAttribute("src", movie.image_url);
+    img.setAttribute("alt", `affiche de ${movie.title}`);
 
     const div = document.createElement("div");
 
@@ -45,7 +47,6 @@ function createMovieCard(movie) {
 
     const button = document.createElement("button");
     button.classList.add("secondary-button");
-    button.setAttribute("data-movie-id", movie.id);
     button.textContent = "Détails";
 
     div.append(h4, button);
@@ -127,6 +128,7 @@ function createDtDd(dtText, ddText, wrapperClass = null) {
  */
 function createMovieInfoBlock(movie) {
     const div = document.createElement("div");
+    div.classList.add("movie-info");
 
     const h3 = document.createElement("h3");
     h3.textContent = movie.title;
@@ -181,7 +183,7 @@ function createMovieDescriptionBlock(movie) {
     const imgTablet = document.createElement("img");
     imgTablet.classList.add("modal-tablet-img");
     imgTablet.setAttribute("src", movie.image_url);
-    imgTablet.setAttribute("alt", `\naffiche du film ${movie.title}`);
+    imgTablet.setAttribute("alt", `affiche du film ${movie.title}`);
 
     const dtActors = document.createElement("dt");
     dtActors.classList.add("dt-hidden");
@@ -228,7 +230,7 @@ function createModal(movie) {
     const imgDesktop = document.createElement("img");
     imgDesktop.classList.add("modal-desktop-img");
     imgDesktop.setAttribute("src", movie.image_url);
-    imgDesktop.setAttribute("alt", `\naffiche du film ${movie.title}`);
+    imgDesktop.setAttribute("alt", `affiche du film ${movie.title}`);
 
     presentationDiv.append(createMovieInfoBlock(movie), imgDesktop);
 

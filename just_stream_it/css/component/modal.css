@@ -53,6 +53,8 @@
 .modal .modal-tablet-img {
     width: 100%;
     height: auto;
+    min-height: 334px;
+    display: block;
     margin: var(--spacing-lg) 0;
 }
 
@@ -81,6 +83,7 @@
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-light);
     width: 100%;
+    height: auto;
 }
 
 .actors {

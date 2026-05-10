@@ -2,6 +2,9 @@ import { fetchTitleById } from "./fetch.js";
 import { createModal } from "./render.js";
 
 async function openModal(movieId) {
+    // defensive code: if a modal already exists, do nothing
+    if (document.querySelector(".background-modal")) return;
+
     const { data, error } = await fetchTitleById(movieId);
     if (error) throw error;
 

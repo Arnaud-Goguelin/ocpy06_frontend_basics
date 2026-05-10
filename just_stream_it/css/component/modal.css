@@ -1,13 +1,14 @@
 .background-modal {
     background-color: var(--modal-overlay);
     position: fixed;
-    top: 0;
-    left: 0;
+    z-index: 1;
+    inset: 0;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-y: auto;
 }
 
 .modal {
@@ -49,7 +50,7 @@
     align-self: flex-end;
 }
 
-.modal img.modal-tablet-img {
+.modal .modal-tablet-img {
     width: 100%;
     height: auto;
     margin: var(--spacing-lg) 0;
@@ -121,13 +122,11 @@
 /* --tablet-breakpoint: 768 (see scaling.css) */
 @media screen and (width < 768px) {
     .background-modal {
-        position: static;
-        display: block;
+        align-items: flex-start;
     }
 
     .modal {
-        display: flex;
-        height: 100%;
+        height: auto;
         padding: var(--spacing-lg);
     }
 

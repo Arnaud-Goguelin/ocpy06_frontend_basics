@@ -44,12 +44,6 @@
     margin-left: var(--spacing-xs);
 }
 
-.modal img {
-    width: 227px;
-    height: 334px;
-    align-self: flex-end;
-}
-
 .modal .modal-tablet-img {
     width: 100%;
     height: auto;
@@ -67,6 +61,16 @@
     align-items: start;
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-bold);
+}
+
+.modal-desktop-img {
+    width: 227px;
+    height: 334px;
+    aspect-ratio: 227/334;
+}
+
+.movie-info {
+    /*max-width: 50%;*/
 }
 
 .director dt {

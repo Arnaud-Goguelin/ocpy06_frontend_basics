@@ -128,6 +128,7 @@ function createDtDd(dtText, ddText, wrapperClass = null) {
  */
 function createMovieInfoBlock(movie) {
     const div = document.createElement("div");
+    div.classList.add("movie-info");
 
     const h3 = document.createElement("h3");
     h3.textContent = movie.title;

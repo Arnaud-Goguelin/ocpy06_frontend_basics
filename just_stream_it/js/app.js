@@ -70,3 +70,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (btn) openModal(btn.dataset.movieId);
         });
 });
+
+window.addEventListener("unhandledrejection", (event) => {
+    console.error("Erreur non gérée :", event.reason);
+});

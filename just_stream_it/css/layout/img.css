@@ -6,6 +6,5 @@ img {
     font-weight: var(--font-weight-extra-light);
     font-style: italic;
     text-align: center;
-    white-space: pre-line;
     word-spacing: var(--spacing-xs);
 }

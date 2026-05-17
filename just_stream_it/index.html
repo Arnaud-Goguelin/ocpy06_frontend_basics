@@ -54,14 +54,25 @@
         "itemListElement": []
     }
     </script>
+    <!-- ===== Preconnects to distant assets ===== -->
+    <link rel="preconnect" href="https://m.media-amazon.com">
     <!-- ===== CSS imports ===== -->
+    <!--
+    for better perf it would be better to load here all css files,
+    yet, there are more than 20.
+    It is easier to centralize all css files in one file, for this exercise project
+    with the rule to use vanilla css, html and js.
+    In a real project a bundler -Vite.js ...) would make things easier
+    -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
     <header class="container mt-3xl mb-3xl">
         <nav>
-            <a href="/#"><img src="assets/images/logo.webp" alt="logo de Just Stream It"></a>
+            <a href="/#">
+                <img src="assets/images/logo.webp" alt="logo de Just Stream It" style="width: 127px; height:94px;">
+            </a>
             <h1 class="ml-3xl">Vidéos à la demande</h1>
         </nav>
     </header>
@@ -77,7 +88,7 @@
 
         <section id="top-rated" >
             <h2>Films les mieux notés</h2>
-            <div class="grid" role="list" aria-label="Films les mieux notés">
+            <div class="grid"  aria-label="Films les mieux notés">
 <!--                populated by JS-->
             </div>
             <button class="primary-button" aria-label="Voir plus de films les mieux notés">Voir plus</button>
@@ -85,7 +96,7 @@
 
         <section id="random-category-one">
             <h2>Catégorie</h2>
-            <div class="grid" role="list">
+            <div class="grid" >
 <!--                populated by JS-->
             </div>
             <button class="primary-button" aria-label="Voir plus de films de cette catégorie">Voir plus</button>
@@ -93,7 +104,7 @@
 
         <section id="random-category-two">
             <h2>Catégorie</h2>
-            <div class="grid" role="list">
+            <div class="grid" >
 <!--                populated by JS-->
             </div>
             <button class="primary-button" aria-label="Voir plus de films de cette catégorie">Voir plus</button>
@@ -103,11 +114,13 @@
             <div class="category-selector">
                 <h2>Autres :</h2>
                 <label for="category-select">Sélectionner une catégorie</label>
-                <select id="category-select">
-<!--                populated by JS-->
+                <select id="category-select" aria-label="Sélectionner une catégorie">
+                    <!-- Set a default value for Lighouse report, others are
+                     populated by JS-->
+                    <option value="" disabled selected>Choisir une catégorie</option>
                 </select>
             </div>
-            <div class="grid" role="list">
+            <div class="grid" >
 <!--                populated by JS-->
             </div>
             <button class="primary-button" aria-label="Voir plus de films de cette catégorie">Voir plus</button>

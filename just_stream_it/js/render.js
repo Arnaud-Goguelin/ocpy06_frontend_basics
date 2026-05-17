@@ -33,7 +33,6 @@ function renderBestMovie(movie) {
  */
 function createMovieCard(movie) {
     const article = document.createElement("article");
-    article.setAttribute("role", "listitem");
     article.setAttribute("data-movie-id", movie.id);
 
     const img = document.createElement("img");
@@ -42,14 +41,14 @@ function createMovieCard(movie) {
 
     const div = document.createElement("div");
 
-    const h4 = document.createElement("h4");
-    h4.textContent = movie.title;
+    const h3 = document.createElement("h3");
+    h3.textContent = movie.title;
 
     const button = document.createElement("button");
     button.classList.add("secondary-button");
     button.textContent = "Détails";
 
-    div.append(h4, button);
+    div.append(h3, button);
     article.append(img, div);
 
     return article;

@@ -1,4 +1,4 @@
-import { fetchAllGenreNames, fetchTitles, fetchTitleById, buildTitlesParams } from "./fetch.js";
+import { fetchAllGenreNames, fetchTitles, fetchTitleById } from "./fetch.js";
 import { renderBestMovie, renderMovieGrid, renderRandomMovieGrid,renderCategorySelect } from "./render.js";
 import { openModal } from "./modal.js";
 
@@ -7,9 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // ── Fetch films' data from API ──────────────────────────────
 
     // ── top 7 films sorted by IMDB score ──────────────────────────────
-    const { data: titlesData, error: titlesError } = await fetchTitles(
-        buildTitlesParams({ page: 1, page_size: 7, sort_by: "-imdb_score" })
-    );
+    const { data: titlesData, error: titlesError } = await fetchTitles({ page_size: 7, sort_by: "-imdb_score" });
     if (titlesError){
         console.error("Could not reach the API for fetching top rated movies.", titlesError);
         return;
@@ -41,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // ── 6 films sorted by random genre one ──────────────────────────────
     const { data: moviesByRandomGenreOne, error: moviesByRandomGenreError } = await fetchTitles(
-        buildTitlesParams({ page: 1, page_size: 6, genre: randomGenreOne })
+        { page: 1, page_size: 6, genre: randomGenreOne }
     );
     if (moviesByRandomGenreError){
         console.error("Could not reach the API for fetching movies for radom genre one.", moviesByRandomGenreError);
@@ -50,7 +48,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // ── 6 films sorted by random genre two ──────────────────────────────
     const { data: moviesByRandomGenreTwo, error: moviesByRandomGenreTwoError } = await fetchTitles(
-        buildTitlesParams({ page: 1, page_size: 6, genre: randomGenreTwo })
+        { page: 1, page_size: 6, genre: randomGenreTwo }
     );
     if (moviesByRandomGenreTwoError){
         console.error("Could not reach the API for fetching movies for radom genre two.", moviesByRandomGenreTwoError);
@@ -59,7 +57,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // ── 6 films of first remaining genre ──────────────────────────────
     const { data: moviesRemainingGenre, error: moviesRemainingGenreError } = await fetchTitles(
-        buildTitlesParams({ page: 1, page_size: 6, genre: allGenres[0] })
+        { page: 1, page_size: 6, genre: allGenres[0] }
     );
     if (moviesRemainingGenreError){
         console.error("Could not reach the API for fetching movies for remaining genres. Is your local server" +
@@ -77,7 +75,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.querySelector("#category-select").addEventListener("change", async (event) => {
             const selectedGenre = event.target.value;
             const { data, error } = await fetchTitles(
-                buildTitlesParams({ page: 1, page_size: 6, genre: selectedGenre })
+                { page: 1, page_size: 6, genre: selectedGenre }
             );
             if (error){
                 console.error("Could not reach the API for fetching movies for selected genre.", error);

@@ -29,30 +29,7 @@ async function fetchData(url) {
 }
 
 /**
- * This function reuses fetchData with to get films'titles from the API
- * on a specific endpoint with query parameters added correctly
- * @param {Object} params - Query parameters to be added to the URL
- * @returns {{ data: Object|null, error: Error|null }} An object containing data in JSON format and error object
- */
-async function fetchTitles(params = {}) {
-
-    const queryString = new URLSearchParams(params).toString();
-    const url = `${BASE_URL}titles/${queryString ? "?" + queryString : ""}`;
-    return fetchData(url);
-}
-
-/**
- * This function reuses fetchData with to get one film by its id from the API
- * @param {number} id - The id of the film to fetch
- * @returns {{ data: Object|null, error: Error|null }} An object containing data in JSON format and error object
- */
-async function fetchTitleById(id) {
-    if (!id) return { data: null, error: new Error("id is required") };
-    const url = `${BASE_URL}titles/${id}`;
-    return fetchData(url);
-}
-
-/**
+ * This function acts like an assert.
  * Filters and validates query parameters against an allowed list for a given endpoint.
  * Adds `page: 1` as a default parameter if not provided.
  *
@@ -88,6 +65,31 @@ function buildParams(allowed, params = {}) {
 /** Arrow function to build query parameters for the titles endpoint */
 const buildTitlesParams = (params) => buildParams(TITLES_ENDPOINT_ALLOWED_PARAMS, params);
 
+
+/**
+ * This function reuses fetchData with to get films'titles from the API
+ * on a specific endpoint with query parameters added correctly
+ * @param {Object} params - Query parameters to be added to the URL
+ * @returns {{ data: Object|null, error: Error|null }} An object containing data in JSON format and error object
+ */
+async function fetchTitles(params = {}) {
+    const safeParams = buildTitlesParams(params);
+    const queryString = new URLSearchParams(safeParams).toString();
+    const url = `${BASE_URL}titles/${queryString ? "?" + queryString : ""}`;
+    return fetchData(url);
+}
+
+/**
+ * This function reuses fetchData with to get one film by its id from the API
+ * @param {number} id - The id of the film to fetch
+ * @returns {{ data: Object|null, error: Error|null }} An object containing data in JSON format and error object
+ */
+async function fetchTitleById(id) {
+    if (!id) return { data: null, error: new Error("id is required") };
+    const url = `${BASE_URL}titles/${id}`;
+    return fetchData(url);
+}
+
 /**
  * Fetches all genres from the API, handling pagination
  * @returns {{ data: string[]|null, error: Error|null }} An array of genre names
@@ -106,4 +108,4 @@ async function fetchAllGenreNames() {
     return { data: genres, error: null };
 }
 
-export { fetchTitles, fetchTitleById, fetchAllGenreNames, buildTitlesParams };
+export { fetchTitles, fetchTitleById, fetchAllGenreNames };

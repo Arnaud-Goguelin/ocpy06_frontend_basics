@@ -33,7 +33,6 @@ function renderBestMovie(movie) {
  */
 function createMovieCard(movie) {
     const article = document.createElement("article");
-    article.setAttribute("role", "listitem");
     article.setAttribute("data-movie-id", movie.id);
 
     const img = document.createElement("img");

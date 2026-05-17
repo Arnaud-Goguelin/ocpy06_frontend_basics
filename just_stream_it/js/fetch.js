@@ -1,4 +1,4 @@
-import {BASE_URL, TITLES_ENDPOINT_ALLOWED_PARAMS, GENRES_ENDPOINT_ALLOWED_PARAMS} from "./const.js";
+import {BASE_URL, TITLES_ENDPOINT_ALLOWED_PARAMS} from "./const.js";
 
 /**
  * This function is used to fetch data from the API

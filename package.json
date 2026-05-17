@@ -3,10 +3,10 @@
     "version": "1.0.0",
     "type": "module",
     "scripts": {
-        "lint:html": "htmlhint index.html",
+        "lint:html": "htmlhint just_stream_it/index.html",
         "lint:css": "stylelint --fix just_stream_it/css/**/*.css",
         "lint:js": "eslint just_stream_it/js/**/*.js",
-        "lint": "pnpm lint:html && pnpm lint:css && pnpm lint:js"
+        "lint": "npm run lint:html && npm run lint:css && npm run lint:js"
     },
     "stylelint": {
         "extends": "stylelint-config-standard"

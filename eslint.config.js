@@ -4,7 +4,7 @@ import globals from "globals";
 
 export default defineConfig([
     {
-        files: ["js/**/*.js"],
+        files: ["just_stream_it/js/**/*.js"],
         plugins: { js },
         extends: ["js/recommended"],
         languageOptions: {

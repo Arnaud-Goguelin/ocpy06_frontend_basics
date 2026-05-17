@@ -45,9 +45,11 @@
     background-color: var(--header-footer-bg);
 }
 
-.grid h4 {
+.grid h3 {
     width: 100%;
     color: var(--text-white);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semi-bold);
 }
 
 /* --tablet-breakpoint: 768 (see scaling.css) */
@@ -67,6 +69,10 @@
         display: none;
     }
 
+    .grid h3 {
+    font-size: var(--font-size-xs-tablet);
+}
+
 }
 
 /* --mobile-breakpoint: 576px (see scaling.css) */
@@ -85,5 +91,9 @@
     .grid article:nth-child(n+3) {
         display: none;
     }
+
+    .grid h3 {
+        font-size: var(--font-size-xs-mobile);
+}
 
 }

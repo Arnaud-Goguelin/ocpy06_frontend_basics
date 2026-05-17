@@ -57,6 +57,13 @@
     <!-- ===== Preconnects to distant assets ===== -->
     <link rel="preconnect" href="https://m.media-amazon.com">
     <!-- ===== CSS imports ===== -->
+    <!--
+    for better perf it would be better to load here all css files,
+    yet, there are more than 20.
+    It is easier to centralize all css files in one file, for this exercise project
+    with the rule to use vanilla css, html and js.
+    In a real project a bundler -Vite.js ...) would make things easier
+    -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>

@@ -53,17 +53,36 @@ async function fetchTitleById(id) {
 }
 
 /**
- * This function filters the provided parameters to only include those allowed by the API
- * and removes any null values
- * @param {string[]} allowed - Array of allowed parameter keys
- * @param {Object} params - Object containing query parameters
- * @returns {Object} Object with filtered and non-null parameters
+ * Filters and validates query parameters against an allowed list for a given endpoint.
+ * Adds `page: 1` as a default parameter if not provided.
+ *
+ * - Throws an Error if an unknown key (not in `allowed`) is passed.
+ * - Warns and skips any parameter with a `null` value.
+ *
+ * @param {string[]} allowed - Array of allowed parameter keys for the target endpoint
+ * @param {Object} params - Query parameters to validate and filter
+ * @returns {Object} A sanitized object containing only valid, non-null parameters
+ * @throws {Error} If a parameter key is not in the `allowed` list
  */
 function buildParams(allowed, params = {}) {
-    return Object.fromEntries(
-        Object.entries({ page: 1, ...params })
-            .filter(([key, value]) => allowed.includes(key) && value !== null)
-    );
+    const mergedParams = { page: 1, ...params };
+    const result = {};
+
+    for (const key in mergedParams) {
+        const value = mergedParams[key];
+
+        if (!allowed.includes(key)) {
+            throw new Error(`Invalid param: "${key}" is not allowed for this endpoint.`);
+        }
+        if (value === null) {
+            console.warn(`Param "${key}" is null and will be ignored.`);
+            continue;
+        }
+
+        result[key] = value;
+    }
+
+    return result;
 }
 
 /** Arrow function to build query parameters for the titles endpoint */
